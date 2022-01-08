@@ -8,5 +8,14 @@
 </head>
 <body>
     <%- include('./partials/header') %> >
+    <ul>
+        <% meals.forEach(meal=> { %>
+            <li>
+                <%=meal.name %><%= meal.price %> 
+                <%= meal.img %> 
+                <%= meal.desription %> 
+            </li>
+            <% }) %>
+    </ul>
 </body>
 </html>
