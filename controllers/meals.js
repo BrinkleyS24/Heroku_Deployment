@@ -15,7 +15,7 @@ mealsRouter.get('/seed', (req, res) => {
 
 mealsRouter.get('/', (req, res) => {
     Meal.find({}, (error, allMeals) => {
-        res.render('index', {
+        res.render('home', {
             meals: allMeals,
         });
     });
