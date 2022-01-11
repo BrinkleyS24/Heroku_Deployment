@@ -8,7 +8,15 @@
     <a href="/meals/new">Add A Meal</a>
     <ul>
         <% meals.forEach(meal => { %>
-        <li><%=meal.name; %></li>
+        <li>
+            <a href="/meals/<%= meal._id %> ">
+            <%=meal.name; %> <br>
+            <img src="<%= meal.img %> " alt="<%= meal.name %> ">
+            </a>
+            <form action="/meals/<%= meal.id %>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE" />
+            </form>
+        </li>
         <% }) %>
     </ul>
 </body>

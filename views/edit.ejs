@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <form action="/meals/<%=meal._id%>?_method=PUT" method="POST">
+        <input type="text" name="name" placeholder="Name" value="<%= meal.name %> "/><br />
+        <input type="text" name="img" placeholder="Image" value="<%= meal.img %> "/><br />
+        <input type="text" name="description" placeholder="Description" value="<%= meal.description %> "/><br />
+        <input type="text" name="price" placeholder="Price" value="<%= meal.price %> "/><br />
+        <input type="submit" value="Update Meal" />
+    </form> 
+</body>
+</html>

@@ -48,6 +48,8 @@ app.use(morgan('dev'));
 app.use(methodOverride('_method'));
 app.use('/meals', mealsController)
 
+app.use('/public', express.static('public'));
+
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 

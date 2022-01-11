@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %> 
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <a href="/meals/<%=meal._id %>/edit">Update This Meal</a>
+    <h3><%= meal.name %> </h3>
+    <img src="<%= meal.img %> " alt="<%= meal.name %> ">
+    <p><%= meal.description %> </p>
+    <p>$<%= meal.price %> </p>
+</body>
+</html>
