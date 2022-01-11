@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <form action="/meals" method="POST">
+        <input type="text" name="name" placeholder="Name"/><br />
+        <input type="text" name="img" placeholder="Image"/><br />
+        <input type="text" name="description" placeholder="Description"/><br />
+        <input type="text" name="price" placeholder="Price"/><br />
+        <input type="submit" name="" value="Add Meal" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %> 
+</head>
+<body>
+    <%- include('./partials/header') %> 
+    <a href="/meals/new">Add A Meal</a>
+    <ul>
+        <% meals.forEach(meal => { %>
+        <li><%=meal.name; %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
