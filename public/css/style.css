@@ -1,0 +1,22 @@
+a {
+    text-decoration: none;
+}
+
+.container ul {
+    list-style: none;
+    display: inline;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap: 5rem;
+}
+
+.card {
+    border: none;
+    width: 15rem;
+}
+
+.card-img-top {
+    width: 100%;
+    object-fit: cover;
+}

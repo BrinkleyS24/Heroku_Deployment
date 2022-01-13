@@ -5,6 +5,7 @@ const orderSchema = new mongoose.Schema({
   img: String,
   description: String,
   price: Number,
+  qty: Number,
 }) 
 
 const Order = mongoose.model('Order', orderSchema);

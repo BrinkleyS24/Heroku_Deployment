@@ -1,18 +1,9 @@
 const express = require('express');
 const mealsRouter = express.Router();
 const Meal = require('../models/meal.js')
-const mealSeed = require('../models/mealSeed.js')
+
 
 // Seed
-mealsRouter.get('/seed', (req, res) => {
-    // to remove any repeat instances of seed data
-    Meal.deleteMany({}, (error, allMeals) => { });
-
-    Meal.create(mealSeed, (error, data) => {
-        res.redirect('/');
-    }
-    );
-});
 
 // Index
 mealsRouter.get('/', (req, res) => {
@@ -22,6 +13,9 @@ mealsRouter.get('/', (req, res) => {
         });
     });
 });
+
+
+
 // New 
 mealsRouter.get('/new', (req, res) => {
     res.render('new')
@@ -32,7 +26,7 @@ mealsRouter.delete("/:id", (req, res) => {
     Meal.findByIdAndDelete(req.params.id, (err, data) => {
         res.redirect('/')
     })
-  })
+})
 
 
 // Update
@@ -48,6 +42,13 @@ mealsRouter.put("/:id", (req, res) => {
         }
     )
 })
+
+mealsRouter.put('/meal/:id/cart', (req, res) => {
+    Product.updateOne({_id: req.params.id}, {$inc:{'qty' : +1}},
+    (error, product) => {
+        res.redirect(`/products/${req.params.id}`)
+    });
+});
 
 // Create
 mealsRouter.post('/', (req, res) => {
@@ -68,7 +69,7 @@ mealsRouter.get('/:id/edit', (req, res) => {
 //Show
 mealsRouter.get('/:id', (req, res) => {
     Meal.findById(req.params.id, (err, foundMeal) => {
-        res.render('show', {meal: foundMeal})
+        res.render('show', { meal: foundMeal })
     })
 })
 
